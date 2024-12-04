@@ -40,15 +40,15 @@ def create_table(table_name="mystery"):
             TableName=table_name,
             KeySchema=[
                 {
-                    "AttributeName": "authors",
+                    "AttributeName": "name",
                     "KeyType": "HASH",
-                },  # 'authors' as partition key
+                },  # 'name' as partition key
             ],
             AttributeDefinitions=[
                 {
-                    "AttributeName": "authors",
+                    "AttributeName": "name",
                     "AttributeType": "S",
-                },  # `authors` is a string
+                },  # `name` is a string
             ],
             ProvisionedThroughput={"ReadCapacityUnits": 5, "WriteCapacityUnits": 5},
         )
@@ -71,11 +71,19 @@ def load_csv_to_dynamodb(csv_file_path, table_name="mystery"):
     :param csv_file_path: The path to the CSV file to load.
     :param table_name: The name of the DynamoDB table to insert data into.
     """
-    # Connect to DynamoDB (LocalStack in this case)
+    load_dotenv()
+    # Get AWS Credentials from .env file
+    aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
+    aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+    # Intialize DynamoDB Resource
     dynamodb = boto3.resource(
         "dynamodb",
+        aws_access_key_id=aws_access_key_id,
+        aws_secret_access_key=aws_secret_access_key,
         region_name="us-east-1",
     )
+
     table = dynamodb.Table(table_name)
 
     try:
@@ -86,23 +94,20 @@ def load_csv_to_dynamodb(csv_file_path, table_name="mystery"):
 
             # Iterate over each row in the CSV file
             for row in reader:
-                if insert_count >= 500:
-                    print("Reached 500 authors. Stopping the insert process.")
-                    break
 
                 # Create the item to be inserted into DynamoDB
                 item = {
-                    "authors": row["authors"],  # 'name' is the partition key
+                    "name": row["name"],  # 'name' is the partition key
                     "title": row["title"],  # Optional: sort key if needed
                     "isbn": row["isbn"],
-                    "text_reviews_count": row["text_reviews_count"],
+                    "text_reviews_count_book": row["text_reviews_count_book"],
                     "series": row["series"],
                     "country_code": row["country_code"],
                     "language_code": row["language_code"],
                     "popular_shelves": row["popular_shelves"],
                     "asin": row["asin"],
                     "is_ebook": row["is_ebook"],
-                    "average_rating": row["average_rating"],
+                    "average_rating_book": row["average_rating_book"],
                     "kindle_asin": row["kindle_asin"],
                     "similar_books": row["similar_books"],
                     "description": row["description"],
@@ -118,9 +123,12 @@ def load_csv_to_dynamodb(csv_file_path, table_name="mystery"):
                     "url": row["url"],
                     "image_url": row["image_url"],
                     "book_id": row["book_id"],
-                    "ratings_count": row["ratings_count"],
+                    "ratings_count_book": row["ratings_count_book"],
                     "work_id": row["work_id"],
                     "title_without_series": row["title_without_series"],
+                    "author_id": row["author_id"],
+                    "ratings_count_author": row["ratings_count_author"],
+                    "average_rating_author": row["average_rating_author"],
                 }
 
                 # Insert the item into DynamoDB
@@ -138,6 +146,10 @@ def load_csv_to_dynamodb(csv_file_path, table_name="mystery"):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
+
+load_csv_to_dynamodb(
+    csv_file_path="/Users/pdeguz01/Documents/git/deGuzmanLeeRodriguezFennie_FinalProject/mylib/merged_mysteryauthors.csv"
+)
 
 # Example usage
 if __name__ == "__main__":
