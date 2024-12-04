@@ -141,8 +141,7 @@ def load_csv_to_dynamodb(csv_file_path, table_name="mystery"):
 
 # Example usage
 if __name__ == "__main__":
-    input_json_file = "/Users/pdeguz01/Documents/git/Data/goodreads/goodreads_books_mystery_thriller_crime.json"  # Replace with your JSON file path
-    parse_json_to_csv(input_json_file)
+
     create_table(table_name="mystery")
     # load_csv_to_dynamodb(
     #     csv_file_path="/Users/pdeguz01/Documents/git/deGuzmanLeeRodriguezFennie_FinalProject/mylib/mystery.csv",
