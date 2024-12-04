@@ -155,6 +155,6 @@ load_csv_to_dynamodb(
 if __name__ == "__main__":
 
     create_table(table_name="mystery")
-    # load_csv_to_dynamodb(
-    #     csv_file_path="/Users/pdeguz01/Documents/git/deGuzmanLeeRodriguezFennie_FinalProject/mylib/mystery.csv",
-    # )
+    load_csv_to_dynamodb(
+        csv_file_path="/Users/pdeguz01/Documents/git/deGuzmanLeeRodriguezFennie_FinalProject/mylib/merged_mysteryauthors.csv",
+    )
