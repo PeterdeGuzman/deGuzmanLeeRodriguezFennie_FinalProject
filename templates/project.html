@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender</title>
+    <!-- This connects to the CSS style file to add a style to the webpage -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="/">Home</a>
+    </div>
+    <!-- Book Recommender user input webpage -->
+    <div class="container">
+        <h1>Book Recommender</h1>
+        <p>Our Book Recommender will search our database for matching titles based on the parameters you request.</p>
+        
+        <!-- Form goes here -->
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <select id="options" name="options">
+                    <option value="option1">Select</option>
+                    <option value="option2">Author</option>
+                    <!-- <option value="option3">Option 2</option> -->
+                    <!-- <option value="option4">Option 3</option> -->
+                </select>
+                <textarea id="userInput" name="userInput" placeholder="Enter text here"></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+
+        <!-- Link to Home -->
+        <p><a href="/">Back to Home</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Book Recommender. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
