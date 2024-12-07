@@ -1,0 +1,195 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000000; /* Black background */
+    color: #FFFFFF;            /* White text */
+    line-height: 1.6;
+    padding-bottom: 60px; /* Add space for fixed footer */
+}
+
+/* Container for content */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1a1a1a;  /* Dark gray for content area */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* Subtle shadow */
+    border-radius: 8px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Use the same font */
+    color: #FFFFFF;  /* White color for headers */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 18px;
+    color: #FFFFFF;  /* White color for paragraph text */
+    margin-bottom: 20px;
+}
+
+/* Links */
+a {
+    color: #FFFFFF;  /* White links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #9B111E;  /* Deep red color on hover */
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    background-color: #333333;  /* Dark gray background for buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Ensures button is full-width in forms */
+}
+
+button:hover {
+    background-color: #9B111E;  /* Deep red background on hover */
+    color: white;               /* Keep text white */
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex; /* Use Flexbox for modern navbar layout */
+    justify-content: space-around; /* Align links evenly */
+    background-color: #1a1a1a;  /* Dark gray background for navbar */
+    padding: 10px 0; /* Add padding for vertical spacing */
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    background-color: #9B111E;  /* Deep red background on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;  /* Dark gray background for footer */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Basic styling for the form */
+form {
+    max-width: 400px;
+    margin: 20px auto 40px auto; /* Adjusted for spacing */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #1a1a1a;  /* Form background color */
+}
+
+/* Flexbox container for the text box and dropdown */
+.form-group {
+    display: flex;
+    gap: 10px; /* Adds space between form elements */
+    margin-bottom: 20px; /* Adds space below the form fields */
+    flex-direction: row; /* Align elements from left to right */
+}
+
+/* Style for the dropdown (Select box) */
+select {
+    width: auto; /* Let the dropdown maintain its original width */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333333; /* Dark background for dropdown */
+    color: white; /* White text inside the dropdown */
+    box-sizing: border-box; /* Prevent the dropdown from overflowing */
+    height: 40px; /* Fixed height to make it shorter */
+}
+
+/* Style for the textarea (multi-line input box) */
+textarea {
+    width: 60%; /* Adjust width to make textarea larger */
+    height: 200px; /* Set the height to make it a square shape */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333333; /* Dark background for textarea */
+    color: white; /* White text inside the textarea */
+    resize: none; /* Disable resizing if you want it to stay square */
+}
+
+/* Style for the submit button */
+button.submit-button {
+    background-color: #9B111E;  /* Red background for submit button */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%; /* Full width for the submit button */
+}
+
+button.submit-button:hover {
+    background-color: #7a0e15; /* Darker red on hover */
+}
+
+/* Space between the form and the "Back to Home" link */
+form {
+    margin-bottom: 20px; /* Adds space between the form and the next section (Back to Home link) */
+}
+
+/* Styling for the "Back to Home" link */
+.container p a {
+    color: #FFFFFF;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.container p a:hover {
+    color: #9B111E;  /* Deep red color on hover */
+    text-decoration: underline;
+}
