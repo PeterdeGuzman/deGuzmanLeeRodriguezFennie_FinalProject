@@ -1,5 +1,5 @@
 
-IMAGE_NAME = de_final_pjt
+IMAGE_NAME = mystery-flask
 DOCKER_ID_USER = kp14100164
 
 build:

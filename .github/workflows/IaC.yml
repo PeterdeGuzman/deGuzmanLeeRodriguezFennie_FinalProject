@@ -46,7 +46,7 @@ jobs:
       # Push Docker image to ECR
       - name: Push Docker image to ECR
         run: |
-          docker push ${{ secrets.AWS_REGISTRY }}:latest
+          docker push ${{ secrets.AWS_REGISTRY }}/mystery-flask:latest
 
       # Update App Runner service
       - name: Update App Runner service
