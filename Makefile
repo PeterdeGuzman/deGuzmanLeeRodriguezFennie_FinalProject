@@ -38,7 +38,7 @@ test:
 
 # Format code in repository
 format:
-	black .
+	black *.py
 
 # Lint code in repository
 lint:

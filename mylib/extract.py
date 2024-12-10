@@ -2,15 +2,10 @@
 Extract and Transform Functions
 """
 
-import requests
-import gzip
 import json
 import csv
-import boto3
-from botocore.exceptions import ClientError
-from dotenv import load_dotenv
-import os
 import pandas as pd
+import ast
 
 
 # Parse JSON to CSV
