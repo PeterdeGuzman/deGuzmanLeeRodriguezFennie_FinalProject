@@ -35,7 +35,8 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker compose build --no-cache
+          IMAGE_NAME = de_final_pjt
+          docker build -t $(IMAGE_NAME) .
 
       # Tag Docker image
       - name: Tag Docker image
