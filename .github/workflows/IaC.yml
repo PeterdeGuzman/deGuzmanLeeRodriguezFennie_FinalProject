@@ -36,7 +36,7 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t de_final_pjt .
+          docker build -t mystery-flask .
 
       # Tag Docker image
       - name: Tag Docker image
