@@ -20,7 +20,7 @@ def gemini_prompt(user_input):
 
     # Generate content using the user input
     response = model.generate_content(
-        f"Please give me a few book titles for {user_input} as writer or author."
+        f"Please give me one paragraph bio for {user_input} as writer or author."
     )
 
     # Access and clean the response content
