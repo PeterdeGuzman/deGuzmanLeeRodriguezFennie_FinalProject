@@ -10,7 +10,7 @@ class Test_Flask(unittest.TestCase):
     def setUpClass(cls):
         # open a subprocess for the Flask app
         cls.flask_process = subprocess.Popen(
-            ["python", "app.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            ["python", "workspace/app.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
         time.sleep(5)  # wait for server to start
 
