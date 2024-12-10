@@ -18,6 +18,6 @@ class FlaskAppLoadTest(HttpUser):
     def submit_query(self):
         # Test the submit route with a POST request
         self.client.post(
-            "/submit"
+            "/submit",
             data={"userInput": "Ernest Hemingway", "options": "Author"}
         )
