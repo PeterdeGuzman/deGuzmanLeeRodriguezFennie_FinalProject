@@ -25,6 +25,32 @@ push:
 login:
 	docker login -u ${DOCKER_ID_USER}
 
+# Make commands for GitHub Actions
+
+install: 
+	pip install --upgrade pip &&\
+		pip install -r requirements.txt
+
+# Run tests in the main repository folder
+
+test: 
+	python -m pytest -vv test_*.py
+
+# Format code in repository
+format:
+	black .
+
+# Lint code in repository
+lint:
+	ruff check *.py 
+
+# Lint Dockerfile 
+container-lint:
+	docker run --rm -i hadolint/hadolint < backend/Dockerfile
+
+# All: Run all tasks
+all: install lint test format deploy
+
 
 # # Define the image name
 # IMAGE_NAME = de_final_pjt
