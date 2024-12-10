@@ -34,7 +34,7 @@ install:
 # Run tests in the main repository folder
 
 test: 
-	python -m pytest -vv test_*.py
+	python -m pytest -vv mylib/test_*.py
 
 # Format code in repository
 format:
