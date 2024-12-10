@@ -6,6 +6,8 @@ on:
       - main
   pull_request:
 
+IMAGE_NAME = de_final_pjt
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -35,7 +37,6 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          IMAGE_NAME = de_final_pjt
           docker build -t $(IMAGE_NAME) .
 
       # Tag Docker image
