@@ -56,12 +56,12 @@ def submit():
     """
     user_input = request.form["userInput"]  # Get the user input from the form
     option = request.form["options"]  # Get the selected option
-    
+
     # Logic for handling different options (if needed)
     if option == "Author":
         # DynamoDB query
         result = query.book_query(dynamodb, user_input)
-    
+
     elif option == "Gemini":
         try:
             result = gemini.gemini_prompt(
@@ -69,10 +69,10 @@ def submit():
             )  # Call your gemini function with the user input
         except Exception as e:
             result = f"Error generating content: {str(e)}"
-    
+
     else:
         result = "Invalid option selected."
-    
+
     return render_template("result.html", result=result)  # Display result page
 
 
