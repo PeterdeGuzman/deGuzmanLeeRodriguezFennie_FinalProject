@@ -31,7 +31,6 @@ jobs:
       # Step 4: Start Flask app in the background
       - name: Start Flask App
         run: |
-          cd backend
           source ../venv/bin/activate
           nohup python app.py &
         env:
