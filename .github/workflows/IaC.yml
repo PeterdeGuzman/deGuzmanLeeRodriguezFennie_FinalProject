@@ -54,7 +54,6 @@ jobs:
           aws apprunner update-service \
             --source-configuration "ImageRepository={ImageRepositoryType='ECR',ImageIdentifier='381492212823.dkr.ecr.us-east-1.amazonaws.com/mystery-flask',ImageConfiguration={Port='8000'}}" \
             --service-arn arn:aws:apprunner:us-east-1:381492212823:service/mystery-flask/36253a55865c499d9857de17b92bbb7e
-            --image-url ${{ secrets.AWS_REGISTRY }}/mystery-flask:latest
 
       # Confirm deployment
       - name: Confirm deployment complete
