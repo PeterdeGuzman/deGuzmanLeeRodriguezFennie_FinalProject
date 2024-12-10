@@ -45,7 +45,6 @@ jobs:
       - name: Run tests
         run: |
           cd mylib
-          source ../venv/bin/activate
           python test_app.py
 
       # Step 7: Cleanup Flask app
