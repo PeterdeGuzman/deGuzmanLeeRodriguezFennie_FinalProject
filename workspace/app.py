@@ -76,5 +76,11 @@ def submit():
     return render_template("result.html", result=result)  # Display result page
 
 
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Retrieve host and port from environment variables or use defaults
+    host = os.getenv("FLASK_RUN_HOST", "0.0.0.0")  # Default to 0.0.0.0 for Docker
+    port = int(os.getenv("FLASK_RUN_PORT", 8000)) 
+    app.run(host=host, port=port, debug=True)
