@@ -42,7 +42,7 @@ format:
 
 # Lint code in repository
 lint:
-	ruff check *.py 
+	ruff check mylib/*.py 
 
 # Lint Dockerfile 
 container-lint:

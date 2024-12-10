@@ -82,5 +82,5 @@ def submit():
 if __name__ == "__main__":
     # Retrieve host and port from environment variables or use defaults
     host = os.getenv("FLASK_RUN_HOST", "0.0.0.0")  # Default to 0.0.0.0 for Docker
-    port = int(os.getenv("FLASK_RUN_PORT", 8000)) 
+    port = int(os.getenv("FLASK_RUN_PORT", 8000))
     app.run(host=host, port=port, debug=True)
