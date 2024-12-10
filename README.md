@@ -1,4 +1,4 @@
-# Peter, Ilsoep, Eric, and Zachary Data Engineering Project
+# Peter, Ilseop, Eric, and Zachary Data Engineering Project
 Our Project
 
 ### Diagram Example
