@@ -13,7 +13,6 @@ class FlaskAppLoadTest(HttpUser):
     def project_page(self):
         # Test the project page
         self.client.get("/project")
-
     @task
     def submit_query(self):
         # Test the submit route with a POST request
