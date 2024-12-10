@@ -25,12 +25,16 @@ RUN python3 -m venv $VENV_PATH \
 FROM python:3.9-slim-bullseye
 
 # Copy virtual environment and project files
-COPY --from=build-env /opt/venv /opt/venv
-WORKDIR /workspace
-COPY workspace/ /workspace
-COPY mylib/ /workspace/mylib
-COPY templates/ /workspace/templates
-COPY static/ /workspace/static
+WORKDIR /deGuzmanLeeRodriguezFennie_FinalProject
+COPY . /deGuzmanLeeRodriguezFennie_FinalProject
+
+# # Copy virtual environment and project files
+# COPY --from=build-env /opt/venv /opt/venv
+# WORKDIR /workspace
+# COPY app.py /workspace
+# COPY mylib/ /workspace/mylib
+# COPY templates/ /workspace/templates
+# COPY static/ /workspace/static
 
 # Set PATH for the virtual environment
 ENV PATH="/opt/venv/bin:$PATH"
