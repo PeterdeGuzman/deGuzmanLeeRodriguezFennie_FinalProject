@@ -24,6 +24,9 @@ RUN python3 -m venv $VENV_PATH \
 # Stage 2: Runtime environment
 FROM python:3.9-slim-bullseye
 
+# Copy virtual environment from build stage
+COPY --from=build-env /opt/venv /opt/venv
+
 # Copy virtual environment and project files
 WORKDIR /deGuzmanLeeRodriguezFennie_FinalProject
 COPY . /deGuzmanLeeRodriguezFennie_FinalProject
@@ -38,7 +41,7 @@ COPY . /deGuzmanLeeRodriguezFennie_FinalProject
 
 # Set PATH for the virtual environment
 ENV PATH="/opt/venv/bin:$PATH"
-ENV PYTHONPATH="/workspace/mylib:$PYTHONPATH"
+# ENV PYTHONPATH="/deGuzmanLeeRodriguezFennie_FinalProject/mylib:$PYTHONPATH"
 
 # Run the application
 CMD ["python3", "app.py"]
