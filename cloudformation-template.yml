@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+
+  # Create an ECR repository to store the Docker image
+  FlaskAppECR:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: deGuzmanLeeRodriguezFennie_FinalProject
+
+
+  # App Runner Service
+  FlaskAppRunnerService:
+    Type: AWS::AppRunner::Service
+    Properties:
+      ServiceName: flask-app-service
+      SourceConfiguration:
+        ImageRepository:
+          ImageIdentifier: !Sub "${FlaskAppECR.RepositoryUri}:latest"
+          ImageConfiguration:
+            Port: "8080"
+          AuthenticationConfiguration:
+            AccessRoleArn: arn:aws:iam::${AWS::AccountId}:role/AppRunnerImageAccessRole
+      InstanceConfiguration:
+        Cpu: "1024"  # CPU allocation (in CPU units, 1024 = 1 vCPU)
+        Memory: "2048"  # Memory allocation (in MB)
+
+Outputs:
+
+  FlaskAppURL:
+    Value: !Sub "https://${FlaskAppRunnerService.ServiceUrl}"
+    Description: "The URL where the Flask app is accessible via App Runner."
