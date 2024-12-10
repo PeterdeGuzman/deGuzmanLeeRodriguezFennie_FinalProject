@@ -3,6 +3,7 @@ import requests
 import subprocess
 import time
 
+
 class Test_Flask(unittest.TestCase):
     base_url = "http://127.0.0.1:5000"
 
@@ -10,7 +11,9 @@ class Test_Flask(unittest.TestCase):
     def setUpClass(cls):
         # open a subprocess for the Flask app
         cls.flask_process = subprocess.Popen(
-            ["python", "workspace/app.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            ["python", "workspace/app.py"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
         )
         time.sleep(5)  # wait for server to start
 
