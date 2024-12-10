@@ -52,7 +52,6 @@ jobs:
       - name: Update App Runner service
         run: |
           aws apprunner update-service \
-            --service-name mystery-flask \
             --service-arn arn:aws:apprunner:us-east-1:381492212823:service/mystery-flask/36253a55865c499d9857de17b92bbb7e
             --image-url ${{ secrets.AWS_REGISTRY }}/mystery-flask:latest
 
