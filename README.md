@@ -33,27 +33,6 @@ The `load.py` script contains multiple functions to facilitate data loading and 
 ### DynamoDB Table Items Summary
 ![DynamoDBScreenshot.png](DynamoDBscreenshot.png)
 
-### Core Files of the Repo:
-* `Dockerfile`
-* `mylib`
-    - `extract.py`
-    - `gemini.py`
-    - `load.py`
-    - `query.py`
-    - `test_app.py`
-* `static`
-    - `style.css`
-* `template`
-    - `homepage.html`
-    - `project.html`
-    - `result.html`
-* `app.py`
-* `LICENSE`
-* `load_test.py`
-* CI/CD pipeline
-* `Makefile`
-* `requirements.txt`
-* `README.md`
 
 ### Infrastructure as Code (IaC)
 
