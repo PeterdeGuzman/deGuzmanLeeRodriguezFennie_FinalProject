@@ -27,7 +27,7 @@ Two Python scripts are used to orchestrate the Extract-Transform-Load pipeline. 
 The `load.py` script contains multiple functions to facilitate data loading and table management in AWS DynamoDB. The `create_table()` function creates a DynamoDB table with "book_id" as the partition key. The next function `load_csv_to_dynamodb()` loads the merged book-author data from a CSV into the DynamoDB table. This is done through batch processing to account for the large volume of books in the dataset. 
 
 ### DynamoDB Table Items Summary
-![DynamoDBScreenshot.png](deGuzmanLeeRodriguezFennie_FinalProject/DynamoDBscreenshot.png)
+![DynamoDBScreenshot.png](DynamoDBscreenshot.png)
 
 ### Core Files of the Repo:
 * `Dockerfile`
