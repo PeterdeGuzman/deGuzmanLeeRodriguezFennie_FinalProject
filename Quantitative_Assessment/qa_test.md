@@ -4,14 +4,15 @@ Method: Simulated 100 / 500 /1000 requests/second for 1 minute
 
 Test Tool: Locust  
 
-## Performance Test Summary
+## Test Summary
 The system is reliable at 100–500 requests per second with a failure rate below 1%. However, at 1,000 requests per second, the failure rate increases to 6%, indicating a bottleneck
 
-| Request Rate (requests/s) | Total Requests | Failures | Failure Rate (%) |
-|---------------------------|----------------|----------|------------------|
-| 100                       | 2,039          | 0        | 0.0%             |
-| 500                       | 10,053         | 40       | 0.4%             |
-| 1,000                     | 18,454         | 1,254    | 6.8%             |
+| Request Rate (requests/s) | Avg Response Time (ms) | 95th % Response Time (ms) | Max Response Time (ms) | Failure Rate (%) | Achieved Requests/s |
+|---------------------------|-------------------------|---------------------------|------------------------|------------------|---------------------|
+| 100                       | 22.87                  | 64                        | 310.57                 | 0.0%             | 34.11              |
+| 500                       | 57.84                  | 180                       | 1,435.92               | 0.4%             | 168.20             |
+| 1,000                     | 290.78                 | 1,700                     | 2,686.01               | 6.8%             | 308.68             |
+
 
 ## Appendix
 
