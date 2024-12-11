@@ -1,5 +1,5 @@
 
-IMAGE_NAME = de_final_pjt
+IMAGE_NAME = mystery-flask
 DOCKER_ID_USER = kp14100164
 
 build:
@@ -38,7 +38,7 @@ test:
 
 # Format code in repository
 format:
-	black .
+	black *.py
 
 # Lint code in repository
 lint:

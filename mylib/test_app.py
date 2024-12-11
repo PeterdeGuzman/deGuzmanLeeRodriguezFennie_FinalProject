@@ -5,13 +5,13 @@ import time
 
 
 class Test_Flask(unittest.TestCase):
-    base_url = "http://127.0.0.1:5000"
+    base_url = "http://127.0.0.1:8000"
 
     @classmethod
     def setUpClass(cls):
         # open a subprocess for the Flask app
         cls.flask_process = subprocess.Popen(
-            ["python", "workspace/app.py"],
+            ["python", "app.py"],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
         )

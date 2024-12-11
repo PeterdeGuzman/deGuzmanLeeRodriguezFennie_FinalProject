@@ -25,14 +25,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m venv venv
-          source venv/bin/activate
           pip install -r requirements.txt
 
       # Step 4: Start Flask app in the background
       - name: Start Flask App
         run: |
-          cd backend
-          source ../venv/bin/activate
           nohup python app.py &
         env:
           FLASK_ENV: development
@@ -46,7 +43,6 @@ jobs:
       - name: Run tests
         run: |
           cd mylib
-          source ../venv/bin/activate
           python test_app.py
 
       # Step 7: Cleanup Flask app

@@ -6,6 +6,7 @@ on:
       - main
   pull_request:
 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -35,7 +36,7 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker compose build --no-cache
+          docker build -t mystery-flask .
 
       # Tag Docker image
       - name: Tag Docker image
@@ -51,8 +52,8 @@ jobs:
       - name: Update App Runner service
         run: |
           aws apprunner update-service \
-            --service-name mystery-flask \
-            --image-url ${{ secrets.AWS_REGISTRY }}/mystery-flask:latest
+            --source-configuration "ImageRepository={ImageRepositoryType='ECR',ImageIdentifier='381492212823.dkr.ecr.us-east-1.amazonaws.com/mystery-flask:latest',ImageConfiguration={Port='8000'}}" \
+            --service-arn arn:aws:apprunner:us-east-1:381492212823:service/mystery-flask/36253a55865c499d9857de17b92bbb7e
 
       # Confirm deployment
       - name: Confirm deployment complete
