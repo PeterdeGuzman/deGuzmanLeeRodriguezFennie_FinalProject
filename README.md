@@ -61,7 +61,7 @@ The system is reliable under 100–500 requests per second, achieving an average
 | 500                       | 57.84                  | 180                       | 1,435.92               | 0.4%             | 168.20             |
 | 1,000                     | 290.78                 | 1,700                     | 2,686.01               | 6.8%             | 308.68             |
 
-For details, please refer to [qa_test.md](/Quantitative_Assessment/qa_test.md)
+For details, please refer to [qa_test.md](/Quantitative_Assessment/qa_test.md).
 
 
 ### Use of GenAI:
