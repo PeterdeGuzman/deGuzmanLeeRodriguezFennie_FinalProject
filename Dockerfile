@@ -22,7 +22,7 @@ RUN python3 -m venv $VENV_PATH \
     && ${VENV_PATH}/bin/pip install git+https://github.com/google/generative-ai-python
 
 # Stage 2: Runtime environment
-FROM python:3.9-slim-bullseye
+FROM gcr.io/distroless/python3
 
 # Copy virtual environment from build stage
 COPY --from=build-env /opt/venv /opt/venv
