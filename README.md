@@ -65,5 +65,5 @@ For details, please refer to [qa_test.md](/Quantitative_Assessment/qa_test.md).
 
 
 ### Use of GenAI:
-Our team used Generative AI to explore tools and packages that were new to us in conjunction with seeking out the software documentation and other learning resources. This included using the `locust` package in Python for load testing and the Google Gemini API to integrate prompts into our Flask app. 
+Our team used Generative AI tools including ChatGPT and Claude to explore tools and packages that were new to us in conjunction with seeking out the software documentation and other learning resources. This included using the `locust` package in Python for load testing and the Google Gemini API to integrate prompts into our Flask app. 
 
