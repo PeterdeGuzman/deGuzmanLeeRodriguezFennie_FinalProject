@@ -60,21 +60,17 @@ The `load.py` script contains multiple functions to facilitate data loading and 
 To implement Infrastructure as Code, this project has a `IaC.yml` file which is configured to run through GitHub Actions. By following the commands in order, you can see that this automated redeployment works through multiple steps. The process begins by checking out the code and authenticating with AWS Elastic Container Registry (ECR) and Docker. Then, it continues by building and tagging the Docker image, pushing the Docker image to AWS ECR, and updating the AWS AppRunner service to deploy the Flask application. 
 
 ### Load Test 
-### Load Test
 
-We conducted a load test using the `Locust` package to evaluate the performance of our Flask application under increasing user loads. Below is a summary of the key metrics and a visual representation of the results:
+We conducted a load test using the `Locust` package to evaluate the performance of our Flask application under increasing user loads.
 
-![Total Requests Per Second](total_requests_per_second.png)
+<p align="center">
+  <img src="total_requests_per_second.png" alt="Total Requests Per Second" width="70%">
+</p>
 
-#### **Key Metrics**
-- **Peak RPS:** ~550 RPS, with ~500 successful requests per second (90.91% success rate).
-- **Failures:** Began at ~300 RPS, stabilizing at ~50–70 failures/s at peak load.
-- **Response Times:** 
-  - Median (50th Percentile): ~3–4 ms.
-  - 95th Percentile: ~8–10 ms, showing slight variability under load.
-- **Concurrent Users:** Scaled linearly to ~1,200 users at ~60 users/min, where failures became significant.
+The system achieved a peak of ~550 RPS, with ~500 successful requests per second (90.91% success rate). Failures began at ~300 RPS, stabilizing at ~50–70 failures/s during peak load. Response times were stable, with a median of ~3–4 ms and a 95th percentile of ~8–10 ms, though variability indicates potential bottlenecks. The application scaled to ~1,200 users at ~60 users/min before performance degradation.
 
-The test highlights strong performance up to 500 RPS but indicates bottlenecks when surpassing this threshold. For a detailed analysis, refer to the [Locust.pdf](Locust.pdf).
+For the full analysis, see the [Locust.pdf](Locust.pdf).
+
 
 ### Quantitative Assessment
 
