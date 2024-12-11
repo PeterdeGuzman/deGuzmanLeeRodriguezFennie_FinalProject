@@ -1,0 +1,60 @@
+name: IaC
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up AWS CLI
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Set up Docker Buildx
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # Log in to AWS ECR
+      - name: Log in to AWS ECR
+        run: |
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_REGISTRY }}
+
+      # Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t mystery-flask .
+
+      # Tag Docker image
+      - name: Tag Docker image
+        run: |
+          docker tag mystery-flask:latest ${{ secrets.AWS_REGISTRY }}/mystery-flask:latest
+
+      # Push Docker image to ECR
+      - name: Push Docker image to ECR
+        run: |
+          docker push ${{ secrets.AWS_REGISTRY }}/mystery-flask:latest
+
+      # Update App Runner service
+      - name: Update App Runner service
+        run: |
+          aws apprunner update-service \
+            --source-configuration "ImageRepository={ImageRepositoryType='ECR',ImageIdentifier='381492212823.dkr.ecr.us-east-1.amazonaws.com/mystery-flask:latest',ImageConfiguration={Port='8000'}}" \
+            --service-arn arn:aws:apprunner:us-east-1:381492212823:service/mystery-flask/36253a55865c499d9857de17b92bbb7e
+
+      # Confirm deployment
+      - name: Confirm deployment complete
+        run: echo "Deployment completed successfully!"

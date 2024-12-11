@@ -1,5 +1,6 @@
 from locust import HttpUser, task, between
 
+
 class PerformanceTest(HttpUser):
     # Define the endpoint to be tested
     host = "https://vgp7iv9bmm.us-east-1.awsapprunner.com"

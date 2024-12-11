@@ -1,0 +1,35 @@
+name: Format Code in Repository
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install Black
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install black
+
+      - name: Auto-format Code
+        run: |
+          source venv/bin/activate
+          black mylib/
+

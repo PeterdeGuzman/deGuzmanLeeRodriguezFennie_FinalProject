@@ -53,16 +53,6 @@ For the full analysis, see the [Locust.pdf](Locust.pdf).
 
 ### Quantitative Assessment
 
-The system is reliable under 100–500 requests per second, achieving an average response time of 22.87 ms and 57.84 ms, respectively, with a failure rate below 1%. At 1,000 requests per second, the system exhibits a significant performance drop, with a failure rate of 6.8%, a sharp increase in response time (average: 290.78 ms, 95th percentile: 1,700 ms), and a maximum response time exceeding 2.6 seconds. 
-
-| Request Rate (requests/s) | Avg Response Time (ms) | 95th % Response Time (ms) | Max Response Time (ms) | Failure Rate (%) | Achieved Requests/s |
-|---------------------------|-------------------------|---------------------------|------------------------|------------------|---------------------|
-| 100                       | 22.87                  | 64                        | 310.57                 | 0.0%             | 34.11              |
-| 500                       | 57.84                  | 180                       | 1,435.92               | 0.4%             | 168.20             |
-| 1,000                     | 290.78                 | 1,700                     | 2,686.01               | 6.8%             | 308.68             |
-
-For details, please refer to [qa_test.md](/Quantitative_Assessment/qa_test.md)
-
 ### Use of GenAI:
 Our team used Generative AI to explore tools and packages that were new to us in conjunction with seeking out the software documentation and other learning resources. This included using the `locust` package in Python for load testing and the Google Gemini API to integrate prompts into our Flask app. 
 

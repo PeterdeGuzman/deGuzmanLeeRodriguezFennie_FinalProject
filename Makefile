@@ -1,5 +1,5 @@
 
-IMAGE_NAME = de_final_pjt
+IMAGE_NAME = mystery-flask
 DOCKER_ID_USER = kp14100164
 
 build:
@@ -24,6 +24,32 @@ push:
 
 login:
 	docker login -u ${DOCKER_ID_USER}
+
+# Make commands for GitHub Actions
+
+install: 
+	pip install --upgrade pip &&\
+		pip install -r requirements.txt
+
+# Run tests in the main repository folder
+
+test: 
+	python -m pytest -vv mylib/test_*.py
+
+# Format code in repository
+format:
+	black *.py
+
+# Lint code in repository
+lint:
+	ruff check mylib/*.py 
+
+# Lint Dockerfile 
+container-lint:
+	docker run --rm -i hadolint/hadolint < backend/Dockerfile
+
+# All: Run all tasks
+all: install lint test format deploy
 
 
 # # Define the image name
