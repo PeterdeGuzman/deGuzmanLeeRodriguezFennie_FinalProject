@@ -1,7 +1,11 @@
 # Peter, Ilseop, Eric, and Zachary Data Engineering Project
 
 ## Status Badges
-badges here
+[![IaC](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/IaC.yml/badge.svg)](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/IaC.yml)
+[![Install Required Dependencies](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/install.yml/badge.svg)](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/install.yml)
+[![Format Code in Repository](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/format.yml/badge.svg)](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/format.yml)
+[![Lint Code in Repository](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/lint.yml/badge.svg)](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/lint.yml)
+[![Test Code in Repository](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/test.yml/badge.svg)](https://github.com/PeterdeGuzman/deGuzmanLeeRodriguezFennie_FinalProject/actions/workflows/test.yml)
 
 ## Our project developed a microservice that interfaces with a data pipeline, built using Python or Rust and containerized with a Distroless Docker image. The microservice includes logging functionality and is capable of handling 10,000 requests per second, with a load test verifying its performance. For the data engineering aspect, we utilized libraries such as Spark, Pandas, SQL, and a vector database. We implemented Infrastructure as Code (IaC) using tools like AWS CloudFormation, AWS SAM, AWS CDK, or the Serverless Framework to manage the infrastructure. The project also includes a CI/CD pipeline for seamless integration and delivery. Our repository contains a comprehensive README.md, an architectural diagram, and proper GitHub/GitLab configurations to ensure the project is fully reproducible. Additionally, we performed a quantitative assessment of the system's reliability and stability, analyzing performance metrics like latency at different request rates. The project is accompanied by a demo video that showcases the application, load test, and system performance. Each team member also submitted a reflection report, including a peer evaluation and feedback session for improving team collaboration.
 
