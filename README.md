@@ -16,7 +16,7 @@ For the data engineering aspect, we utilized libraries such as Pandas, and a NoS
 The project is accompanied by a demo video (below) that showcases the ETL pipeline, application, AWS integration, a load test, and system performance. Each team member also submitted a reflection report (included as a PDF), including peer evaluations and a reflection on our group feedback session. 
 
 #### Demo Video (Click the image to view the YouTube video)
-
+[![Alt text for the video](https://img.youtube.com/vi/UU7hEGZny1w/0.jpg)](https://www.youtube.com/watch?v=UU7hEGZny1w)
 
 ### Project Diagram 
 <img width="960" alt="Screenshot 2024-12-02 at 6 47 18 PM" src="https://github.com/user-attachments/assets/c8f60fc3-5eb7-4d2a-bc2a-eff656597d58">
